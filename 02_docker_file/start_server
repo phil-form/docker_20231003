@@ -1,0 +1,10 @@
+DIR="./node_modules/"
+if [ -d "$DIR" ]; then
+    # Take action if $DIR exists. #
+    echo "Angular server already installed..."
+else
+    echo "DIR DOES NOT EXIST"
+    ng new app --directory ./ --skip-git
+    chown -R 1000:1000
+fi
+ng serve --host 0.0.0.0
